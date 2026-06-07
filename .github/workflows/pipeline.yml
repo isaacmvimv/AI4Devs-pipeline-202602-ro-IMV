@@ -5,9 +5,8 @@
 # Flujo: Test → Build → Deploy (EC2)
 #
 # Disparador:
-#   Solo se ejecuta cuando hay actividad en un Pull Request abierto (apertura,
-#   nuevos commits en la rama del PR o reapertura). Un push a la rama del PR
-#   dispara el evento "synchronize".
+#   - push: cualquier push a cualquier rama (temporal; revertir más adelante)
+#   - pull_request: apertura, nuevos commits (synchronize) o reapertura de un PR
 #
 # Secretos requeridos (Settings → Secrets and variables → Actions):
 #   - AWS_ACCESS_ID       : Access Key ID de AWS
@@ -29,6 +28,7 @@
 name: Backend CI/CD Pipeline
 
 on:
+  push:
   pull_request:
     types:
       - opened
