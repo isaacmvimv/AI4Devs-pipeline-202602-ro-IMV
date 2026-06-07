@@ -14,7 +14,7 @@
 #   - EC2_INSTANCE        : IP pública o DNS de la instancia EC2
 #   - EC2_SSH_PRIVATE_KEY : Clave privada PEM para SSH (usuario ubuntu)
 #
-# Prerrequisitos en EC2:
+# Pre-requisitos en EC2:
 #   - Node.js y npm instalados
 #   - PM2 instalado globalmente (npm install -g pm2)
 #   - Directorio de despliegue creado (por defecto: /home/ubuntu/lti-backend)
