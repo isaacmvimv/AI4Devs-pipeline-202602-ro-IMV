@@ -162,6 +162,60 @@ POST http://localhost:3010/candidates
 }
 ```
 
+## Backend Testing
+
+The backend includes an autonomous test suite based on **Jest** and **Supertest**, split into two projects:
+
+| Project | Scope | Requires DB |
+|---|---|---|
+| `unit` | Services, controllers, and validator | No |
+| `integration` | HTTP API against a real PostgreSQL database | Yes |
+
+Test files are located in `backend/src/tests/` (unit and integration) and alongside existing service/controller files.
+
+### Prerequisites
+
+Integration tests require PostgreSQL running with seed data. From the project root:
+
+```sh
+docker-compose up -d
+```
+
+From the `backend/` directory:
+
+```sh
+npx prisma migrate deploy
+npx ts-node --transpile-only prisma/seed.ts
+```
+
+### Running tests
+
+All commands must be run from the `backend/` directory:
+
+```sh
+cd backend
+
+# Run all tests (unit + integration)
+npm test
+
+# Unit tests only (no database required)
+npm run test:unit
+
+# Integration tests only (requires PostgreSQL with seed data)
+npm run test:integration
+
+# Run all tests and generate execution reports
+npm run test:report
+```
+
+### Reports
+
+When you run `npm run test:report`, the following files are generated in `backend/test-results/`:
+
+- `TEST-REPORT.md` — Markdown summary with the status of each test
+- `test-results.json` — Raw results in JSON format
+- `junit.xml` — JUnit format for CI/CD pipelines
+
 ## Setting up EC2 and GitHub Actions
 
 To run this project on an EC2 instance and ensure GitHub Actions works correctly, follow these steps:
@@ -418,6 +472,60 @@ POST http://localhost:3010/candidates
 }
 ```
 
+
+## Tests del Backend
+
+El backend incluye una suite de tests autónoma basada en **Jest** y **Supertest**, dividida en dos proyectos:
+
+| Proyecto | Alcance | Requiere BD |
+|---|---|---|
+| `unit` | Servicios, controladores y validador | No |
+| `integration` | API HTTP contra PostgreSQL real | Sí |
+
+Los archivos de test están en `backend/src/tests/` (unitarios e integración) y junto a los servicios/controladores existentes.
+
+### Prerrequisitos
+
+Los tests de integración requieren PostgreSQL en marcha con datos de seed. Desde la raíz del proyecto:
+
+```sh
+docker-compose up -d
+```
+
+Desde el directorio `backend/`:
+
+```sh
+npx prisma migrate deploy
+npx ts-node --transpile-only prisma/seed.ts
+```
+
+### Ejecutar tests
+
+Todos los comandos deben ejecutarse desde el directorio `backend/`:
+
+```sh
+cd backend
+
+# Ejecutar todos los tests (unitarios + integración)
+npm test
+
+# Solo tests unitarios (no requieren base de datos)
+npm run test:unit
+
+# Solo tests de integración (requieren PostgreSQL con seed)
+npm run test:integration
+
+# Ejecutar todos los tests y generar reportes de ejecución
+npm run test:report
+```
+
+### Reportes
+
+Al ejecutar `npm run test:report`, se generan los siguientes archivos en `backend/test-results/`:
+
+- `TEST-REPORT.md` — Resumen en Markdown con el estado de cada test
+- `test-results.json` — Resultados en formato JSON
+- `junit.xml` — Formato JUnit para pipelines de CI/CD
 
 ## Configuración de EC2 y GitHub Actions
 

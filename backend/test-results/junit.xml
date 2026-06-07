@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="29" failures="0" errors="0" time="30.734">
+  <testsuite name="getCandidatesByPositionService" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="15.544" tests="1">
+    <testcase classname="getCandidatesByPositionService should return candidates with their average scores" name="getCandidatesByPositionService should return candidates with their average scores" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="updateCandidateStage" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="15.744" tests="1">
+    <testcase classname="updateCandidateStage should update the candidate stage and return the updated application" name="updateCandidateStage should update the candidate stage and return the updated application" time="0.043">
+    </testcase>
+  </testsuite>
+  <testsuite name="validateCandidateData" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="15.782" tests="6">
+    <testcase classname="validateCandidateData acepta un candidato con datos válidos" name="validateCandidateData acepta un candidato con datos válidos" time="0.019">
+    </testcase>
+    <testcase classname="validateCandidateData rechaza nombre demasiado corto" name="validateCandidateData rechaza nombre demasiado corto" time="0.25">
+    </testcase>
+    <testcase classname="validateCandidateData rechaza email inválido" name="validateCandidateData rechaza email inválido" time="0.002">
+    </testcase>
+    <testcase classname="validateCandidateData rechaza teléfono inválido" name="validateCandidateData rechaza teléfono inválido" time="0.006">
+    </testcase>
+    <testcase classname="validateCandidateData rechaza fecha con formato incorrecto" name="validateCandidateData rechaza fecha con formato incorrecto" time="0.005">
+    </testcase>
+    <testcase classname="validateCandidateData permite edición sin validar campos obligatorios cuando hay id" name="validateCandidateData permite edición sin validar campos obligatorios cuando hay id" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="updateCandidateStageController" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="16.138" tests="1">
+    <testcase classname="updateCandidateStageController should return 200 and updated candidate stage" name="updateCandidateStageController should return 200 and updated candidate stage" time="0.025">
+    </testcase>
+  </testsuite>
+  <testsuite name="getCandidatesByPosition" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:07:01" time="0.495" tests="1">
+    <testcase classname="getCandidatesByPosition should return 200 and candidates data" name="getCandidatesByPosition should return 200 and candidates data" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="API Health Check" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:07:01" time="10.607" tests="1">
+    <testcase classname="API Health Check GET / debe responder 200 con mensaje de bienvenida" name="API Health Check GET / debe responder 200 con mensaje de bienvenida" time="0.115">
+    </testcase>
+  </testsuite>
+  <testsuite name="Upload API" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="26.202" tests="3">
+    <testcase classname="Upload API debe subir un archivo PDF válido con 200" name="Upload API debe subir un archivo PDF válido con 200" time="0.093">
+    </testcase>
+    <testcase classname="Upload API debe rechazar tipos de archivo no permitidos con 400" name="Upload API debe rechazar tipos de archivo no permitidos con 400" time="0.02">
+    </testcase>
+    <testcase classname="Upload API debe devolver 400 cuando no se envía archivo" name="Upload API debe devolver 400 cuando no se envía archivo" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="Positions API" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="26.281" tests="5">
+    <testcase classname="Positions API GET /positions debe devolver la lista de posiciones visibles con 200" name="Positions API GET /positions debe devolver la lista de posiciones visibles con 200" time="0.124">
+    </testcase>
+    <testcase classname="Positions API GET /positions/:id/candidates debe devolver candidatos de una posición existente" name="Positions API GET /positions/:id/candidates debe devolver candidatos de una posición existente" time="0.028">
+    </testcase>
+    <testcase classname="Positions API GET /positions/:id/candidates debe devolver array vacío para posición sin candidatos" name="Positions API GET /positions/:id/candidates debe devolver array vacío para posición sin candidatos" time="0.022">
+    </testcase>
+    <testcase classname="Positions API GET /positions/:id/interviewflow debe devolver el flujo de entrevistas de una posición existente" name="Positions API GET /positions/:id/interviewflow debe devolver el flujo de entrevistas de una posición existente" time="0.017">
+    </testcase>
+    <testcase classname="Positions API GET /positions/:id/interviewflow debe devolver 404 para posición inexistente" name="Positions API GET /positions/:id/interviewflow debe devolver 404 para posición inexistente" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Candidates API" errors="0" failures="0" skipped="0" timestamp="2026-06-07T17:06:46" time="26.963" tests="10">
+    <testcase classname="Candidates API POST /candidates debe crear un candidato válido y devolver 201" name="Candidates API POST /candidates debe crear un candidato válido y devolver 201" time="0.479">
+    </testcase>
+    <testcase classname="Candidates API POST /candidates debe rechazar datos inválidos con 400" name="Candidates API POST /candidates debe rechazar datos inválidos con 400" time="0.008">
+    </testcase>
+    <testcase classname="Candidates API POST /candidates debe rechazar email duplicado con 400" name="Candidates API POST /candidates debe rechazar email duplicado con 400" time="0.096">
+    </testcase>
+    <testcase classname="Candidates API POST /candidates debe crear candidato con educación y experiencia laboral" name="Candidates API POST /candidates debe crear candidato con educación y experiencia laboral" time="0.182">
+    </testcase>
+    <testcase classname="Candidates API GET /candidates/:id debe devolver un candidato existente con 200" name="Candidates API GET /candidates/:id debe devolver un candidato existente con 200" time="0.026">
+    </testcase>
+    <testcase classname="Candidates API GET /candidates/:id debe devolver 404 para candidato inexistente" name="Candidates API GET /candidates/:id debe devolver 404 para candidato inexistente" time="0.007">
+    </testcase>
+    <testcase classname="Candidates API GET /candidates/:id debe devolver 400 para ID no numérico" name="Candidates API GET /candidates/:id debe devolver 400 para ID no numérico" time="0.006">
+    </testcase>
+    <testcase classname="Candidates API PUT /candidates/:id debe actualizar la etapa de entrevista de una aplicación existente" name="Candidates API PUT /candidates/:id debe actualizar la etapa de entrevista de una aplicación existente" time="0.044">
+    </testcase>
+    <testcase classname="Candidates API PUT /candidates/:id debe devolver 404 para aplicación inexistente" name="Candidates API PUT /candidates/:id debe devolver 404 para aplicación inexistente" time="0.01">
+    </testcase>
+    <testcase classname="Candidates API PUT /candidates/:id debe devolver 400 para applicationId inválido" name="Candidates API PUT /candidates/:id debe devolver 400 para applicationId inválido" time="0.005">
+    </testcase>
+  </testsuite>
+</testsuites>

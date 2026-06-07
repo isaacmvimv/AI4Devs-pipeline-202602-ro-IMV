@@ -12,9 +12,13 @@ export const addCandidate = async (candidateData: any) => {
         throw new Error(error);
     }
 
-    const candidate = new Candidate(candidateData); // Crear una instancia del modelo Candidate
+    const candidate = new Candidate(candidateData);
+    candidate.educations = [];
+    candidate.workExperiences = [];
+    candidate.resumes = [];
+    candidate.applications = [];
     try {
-        const savedCandidate = await candidate.save(); // Guardar el candidato en la base de datos
+        const savedCandidate = await candidate.save();
         const candidateId = savedCandidate.id; // Obtener el ID del candidato guardado
 
         // Guardar la educación del candidato
