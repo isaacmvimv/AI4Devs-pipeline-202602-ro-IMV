@@ -14,7 +14,7 @@
         "test:all": "npm run test:report",
         "prisma:init": "npx prisma init",
         "prisma:generate": "npx prisma generate",
-        "prisma:seed": "npx ts-node prisma/seed.ts",
+        "prisma:seed": "npx ts-node --transpile-only prisma/seed.ts",
         "start:prod": "npm run build && npm start"
     },
     "keywords": [],

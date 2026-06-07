@@ -93,6 +93,10 @@ jobs:
         working-directory: ${{ env.BACKEND_DIR }}
         run: npx prisma migrate deploy
 
+      - name: Cargar datos de prueba (seed)
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: npm run prisma:seed
+
       - name: Ejecutar suite de tests
         working-directory: ${{ env.BACKEND_DIR }}
         run: npm test
